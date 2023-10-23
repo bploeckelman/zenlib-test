@@ -9,8 +9,8 @@ import zendo.games.zenlib.screens.ZenScreen;
 
 public class TestScreen extends ZenScreen<Assets> {
 
-    public TestScreen(Class<Assets> assetsClass) {
-        super(assetsClass);
+    public TestScreen() {
+        super(Assets.class);
 
         // override the default 'ScreenViewport'
         int screenWidth = Main.config.window.width / 4;

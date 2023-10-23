@@ -25,7 +25,7 @@ public class Main extends ZenMain {
 
     @Override
     public ZenScreen<Assets> createStartScreen() {
-        return new TestScreen(Assets.class);
+        return new TestScreen();
     }
 
     @Override
