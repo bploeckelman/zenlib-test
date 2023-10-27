@@ -38,8 +38,8 @@ dependencies {
   implementation "com.kotcrab.vis:vis-ui:$visUiVersion:sources"
   implementation "org.mini2Dx:universal-tween-engine:$universalTweenVersion:sources"
   implementation "space.earlygrey:shapedrawer:$shapeDrawerVersion:sources"
+  implementation "com.github.Zendo-Games:zenlib:$zenlibVersion:sources"
   implementation project(':core')
-
 }
 
 import org.akhikhl.gretty.AppBeforeIntegrationTestTask
@@ -134,7 +134,6 @@ task dist(dependsOn: [clean, compileGwt]) {
 task addSource {
   doLast {
     sourceSets.main.compileClasspath += files(project(':core').sourceSets.main.allJava.srcDirs)
-    
   }
 }
 
