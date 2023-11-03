@@ -32,13 +32,13 @@ public class TestScreen2 extends ZenScreen {
     protected void initializeUI() {
         super.initializeUI();
 
-        var button = new VisTextButton("Switch to screen 1");
+        var button = new VisTextButton("Switch to Physics");
         button.setPosition(uiStage.getWidth() - button.getWidth() - 100, 100);
         button.getStyle().up = ZenPatch.glass_active.ninePatchDrawable;
         button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new TestScreen1());
+                game.setScreen(new TestPhysicsScreen());
             }
         });
         uiStage.addActor(button);

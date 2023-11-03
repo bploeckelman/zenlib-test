@@ -19,6 +19,7 @@ public class TestScreen1 extends ZenScreen {
     public TestScreen1() {
         super();
 
+
         // override the default 'ScreenViewport'
         int screenWidth = Main.config.window.width / 4;
         int screenHeight = Main.config.window.height / 4;
@@ -57,7 +58,9 @@ public class TestScreen1 extends ZenScreen {
         batch.setProjectionMatrix(worldCamera.combined);
         batch.begin();
         {
+
             var image = game.assets.gdx;
+
             var scale = 1 / 4f;
             var imageWidth = scale * image.getWidth();
             var imageHeight = scale * image.getHeight();
