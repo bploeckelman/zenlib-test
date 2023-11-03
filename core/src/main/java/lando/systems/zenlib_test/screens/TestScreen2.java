@@ -12,10 +12,12 @@ import lando.systems.zenlib_test.Main;
 import zendo.games.zenlib.assets.ZenPatch;
 import zendo.games.zenlib.screens.ZenScreen;
 
-public class TestScreen2 extends ZenScreen<Assets> {
+import static lando.systems.zenlib_test.Main.game;
+
+public class TestScreen2 extends ZenScreen {
 
     public TestScreen2() {
-        super(Assets.class);
+        super();
 
         // override the default 'ScreenViewport'
         int screenWidth = Main.config.window.width / 2;
@@ -36,7 +38,7 @@ public class TestScreen2 extends ZenScreen<Assets> {
         button.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                Main.game.setScreen(new TestScreen1());
+                game.setScreen(new TestScreen1());
             }
         });
         uiStage.addActor(button);
@@ -55,7 +57,7 @@ public class TestScreen2 extends ZenScreen<Assets> {
         batch.setProjectionMatrix(worldCamera.combined);
         batch.begin();
         {
-            var image = assets.gdx;
+            var image = game.assets.gdx;
             var scale = 1 / 4f;
             var imageWidth = scale * image.getWidth();
             var imageHeight = scale * image.getHeight();
