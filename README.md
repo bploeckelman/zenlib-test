@@ -1,11 +1,11 @@
 # zenlib-test
 
-This is a test project for [zenlib](https://github.com/Zendo-Games/zenlib).
+This is a test project for [zenlib](https://github.com/zendo-games/zenlib).
 
 It can be brought into a new libgdx project by adding the following to the `dependencies` section of the `core` project in `build.gradle`:
 
 ```groovy
-  api "com.github.Zendo-Games:zenlib:$zenlibVersion"
+  api "com.github.zendo-games:zenlib:$zenlibVersion"
 ```
 Where `$zenlibVersion` is the version of zenlib you want to use and is set in the `gradle.properties` file.
 Use `zenlibVersion=main-SNAPSHOT` to get the latest version, however if making updates to the library while working on the main project 

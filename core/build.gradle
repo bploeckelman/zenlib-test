@@ -8,5 +8,5 @@ dependencies {
   api "com.kotcrab.vis:vis-ui:$visUiVersion"
   api "org.mini2Dx:universal-tween-engine:$universalTweenVersion"
   api "space.earlygrey:shapedrawer:$shapeDrawerVersion"
-  api "com.github.Zendo-Games:zenlib:$zenlibVersion"
+  api "com.github.zendo-games:zenlib:$zenlibVersion"
 }
