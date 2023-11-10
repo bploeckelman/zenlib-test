@@ -18,6 +18,8 @@ public class PhysicsBall implements Collidable {
     public Vector2 pos;
     public Vector2 vel;
     public float size;
+    public float rotation;
+    public float angularMomentum;
 
     public PhysicsBall(Vector2 position, Vector2 velocity) {
         this.pos = new Vector2(position);
@@ -29,9 +31,16 @@ public class PhysicsBall implements Collidable {
 
     }
 
+    public void update(float dt){
+        angularMomentum = MathUtils.clamp(angularMomentum, -60, 60);
+        angularMomentum *= Math.pow(.5f, dt);
+        rotation += angularMomentum * dt * 5f;
+    }
+
     @Override
     public void renderDebug(ShapeDrawer shapes) {
         shapes.filledCircle(collisionShape.center, collisionShape.radius, Color.MAGENTA);
+        shapes.line(pos.x, pos.y, pos.x + MathUtils.cosDeg(rotation) * collisionShape.radius, pos.y + MathUtils.sinDeg(rotation) * collisionShape.radius, Color.WHITE );
     }
 
     @Override
@@ -94,5 +103,15 @@ public class PhysicsBall implements Collidable {
     @Override
     public boolean shouldCollideWith(Collidable object) {
         return true;
+    }
+
+    @Override
+    public float getAngularMomentum() {
+        return angularMomentum;
+    }
+
+    @Override
+    public void addAngularMomentum(float dA) {
+        angularMomentum += (dA * .01f);
     }
 }

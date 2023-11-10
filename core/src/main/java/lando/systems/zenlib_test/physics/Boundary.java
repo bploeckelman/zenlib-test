@@ -87,4 +87,13 @@ public class Boundary implements Collidable {
     public boolean shouldCollideWith(Collidable object) {
         return true;
     }
+
+    @Override
+    public float getAngularMomentum() {
+        return 0;
+    }
+
+    @Override
+    public void addAngularMomentum(float dA) {
+    }
 }

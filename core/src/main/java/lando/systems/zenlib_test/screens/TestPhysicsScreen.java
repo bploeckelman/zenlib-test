@@ -61,6 +61,7 @@ public class TestPhysicsScreen extends ZenScreen {
             game.setScreen(new TestScreen1());
         }
         for (PhysicsBall b : balls) {
+            b.update(dt);
             b.getVelocity().y -= 60f * dt;
         }
         physicsSystem.update(dt,collidables, influencers );
